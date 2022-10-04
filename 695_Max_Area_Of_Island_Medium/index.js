@@ -2,13 +2,18 @@
  * @param {number[][]} grid
  * @return {number}
  */
-// Total Time complexity : O(n^2) where n is the size(m:lows, n:columns) of grid
+
+/*
+ Complexity Analysis
+ Time Complexity: O(R*C)O(R∗C), where RR is the number of rows in the given grid, and CC is the number of columns. We visit every square once.
+ Space complexity: O(R*C)O(R∗C), the space used by seen to keep track of visited squares, and the space used by the call stack during our recursion.
+*/
+
 var maxAreaOfIsland = function (grid) {
     let lows = grid.length;
     let columns = grid[0].length;
     let maxArea = 0;
 
-    // TC : O(mn) where m is the number of lows and n is the number of columns
     for (let i = 0; i < lows; i++) {
         for (let j = 0; j < columns; j++) {
             if (grid[i][j] === 1) {
@@ -22,7 +27,6 @@ var maxAreaOfIsland = function (grid) {
 
     return maxArea;
 
-    // TC : O(mn) where m is the number of lows and n is the number of columns
     function searchArea(low, column) {
         let area = 0;
         // check upper side
