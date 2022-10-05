@@ -9,9 +9,6 @@
  * @param {ListNode[]} lists
  * @return {ListNode}
  */
-
-// Time complexity : O(N) where N is the number of lists nodes
-// Space complexity : O(N) where N is the number of lists nodes
 var mergeKLists = function (lists) {
     if (lists.length === 0) return null;
 
