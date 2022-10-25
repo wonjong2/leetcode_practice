@@ -49,4 +49,3 @@ console.log(merge([[1, 4], [4, 5]]));
 console.log(merge([[1, 4], [0, 4]]));
 console.log(merge([[1, 4], [0, 1]]));
 
-[[3, 3], [0, 1], [0, 0]]
