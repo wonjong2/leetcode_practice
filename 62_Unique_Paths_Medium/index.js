@@ -4,12 +4,29 @@
  * @return {number}
  */
 var uniquePaths = function (m, n) {
+    /* Dinamic Programing */
+
+    let paths = [];
+
+    for (let i = 0; i < m; i++) {
+        let row = [];
+        for (let j = 0; j < n; j++) {
+            // if (i === 0 || j === 0) paths[i][j] = 1;
+            // else paths[i][j] = paths[i - 1][j] + paths[i][j - 1];
+            if (i === 0 || j === 0) row.push(1);
+            else row.push(paths[i - 1][j] + row[j - 1]);
+        }
+        paths.push(row);
+    }
+
+    return paths[m - 1][n - 1];
+
+
+    /* Brute Force, Recusion with Memoziation */
+    /*
     let subPaths = {};
-    //let result = 0;
 
     return goFinish(0, 0);
-
-    //return result;
 
     function goFinish(low, column) {
         if (subPaths[`(${low}, ${column})`]) return subPaths[`(${low}, ${column})`];
@@ -17,8 +34,6 @@ var uniquePaths = function (m, n) {
         if (low === m - 1 && column === n - 1) {
             return 1;
         }
-
-        // if (low === m || column === n) return 0;
 
         let result = 0;
         let result2 = 0;
@@ -35,6 +50,7 @@ var uniquePaths = function (m, n) {
 
         return result + result2;;
     }
+    */
 };
 
 console.log(uniquePaths(4, 2));
