@@ -6,11 +6,15 @@ You must do it in place.
 
 ## Example 1:
 
+![ex1](./ex1.png)
+
 Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
 
 Output: [[1,0,1],[0,0,0],[1,0,1]]
 
 ## Example 2:
+
+![ex2](./ex2.png)
 
 Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
 
