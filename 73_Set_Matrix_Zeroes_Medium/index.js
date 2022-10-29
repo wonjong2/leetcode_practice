@@ -3,6 +3,35 @@
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var setZeroes = function (matrix) {
+    /** Second Approach */
+    let rows = {};
+    let columns = {};
+
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+            if (matrix[i][j] === 0) {
+                rows[String(i)] = i;
+                columns[String(j)] = j;
+            }
+        }
+    }
+
+    for (let row in rows) {
+        for (let k = 0; k < matrix[0].length; k++) {
+            matrix[row][k] = 0;
+        }
+    }
+
+    for (let column in columns) {
+        for (let k = 0; k < matrix.length; k++) {
+            matrix[k][column] = 0;
+        }
+    }
+
+    return matrix;
+
+    /* First Approach */
+    /*
     let zeroAt = [];
     let rows = {};
     let column = {};
@@ -30,6 +59,7 @@ var setZeroes = function (matrix) {
     }
 
     return matrix;
+    */
 };
 
 console.log(setZeroes([[1, 1, 1], [1, 0, 1], [1, 1, 1]]));
